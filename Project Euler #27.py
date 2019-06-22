@@ -18,14 +18,19 @@ def primefinder(number):
 
 primefinder(70000)
 
-def Quadratic_primes():
-    for x in range(1,10000):
+def Quadratic_primes(record,current):
+    for x in range(1,100):
         for a in range(-999,999,2):
             for b in primelist:
-               if x**2+a*x+b not in primelist2:
-                   break
+                if x**2+a*x+b not in primelist2:
+                    break
+                if current > record:
+                    record = current
 
-Quadratic_primes()
+
+
+
+Quadratic_primes(0,0)
 
 end = time.time()
 print(end - start)
