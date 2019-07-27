@@ -4,6 +4,14 @@ start = time.time()
 
 primelist= [2]
 
+def primechecker(number):
+    if number % 2 == 0:
+        return None
+    for x in range(3,int(math.sqrt(number+1)),2):
+        if number % x == 0:
+            return None
+    print("Prime")
+
 def primefinder(number):
     prime = [True] * (number+1)
     for y in range(3,int(math.sqrt(number+1)),2):
@@ -15,19 +23,13 @@ def primefinder(number):
         if prime[x] == True:
             primelist.append(x)
 
-primefinder(70000)
+primefinder(1000)
 
 def Quadratic_primes(record,current):
     for x in range(1,100):
         for a in range(-999,999,2):
             for b in primelist:
-                if x**2+a*x+b not in primelist2:
-                    break
-                if current > record:
-                    record = current
-
-
-
+                primechecker(x**2+a*x+b)
 
 Quadratic_primes(0,0)
 
